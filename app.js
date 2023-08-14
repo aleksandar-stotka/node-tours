@@ -24,7 +24,7 @@ const getAllTours =  (req, res) => {
     console.log(res.params);
 
   
-    const id = req.params.id * 1;
+    const id =  res.params.id * 1;
     if (id > tours.length) {
       return res.status(404).json({
         status: "fail",
