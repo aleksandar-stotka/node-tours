@@ -24,7 +24,7 @@ const getAllTours =  (req, res) => {
     console.log(res.params);
 
   
-    const id =  res.params.id * 1;
+    const id = req.params.id * 1;
     if (id > tours.length) {
       return res.status(404).json({
         status: "fail",
@@ -64,7 +64,7 @@ const getAllTours =  (req, res) => {
   }
   ////////////////////////////////////////////
   const deleteTour =  (req, res) => {
-    if(res.params.id *1 > tours.length) {
+    if(req.params.id *1 > tours.length) {
         
         return res.status(404).json({
             status: "fail",
@@ -73,9 +73,7 @@ const getAllTours =  (req, res) => {
     }
     res.status(204).json({
         status: "success",
-        data: {
-            tour: null
-        }
+        data: null
     })
   }
  ///////////////////////////////////////////////
@@ -112,7 +110,9 @@ app.route("/api/v1/tours/:id")
 .patch(updateTour)
 
 
-//---
+////////////// Post
+//////////////////////////////
+//patch
 
 
 
