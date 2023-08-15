@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 //get tours from json
-//--------------
+//--------------  
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 ); //read data from api
